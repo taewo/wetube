@@ -4,9 +4,10 @@ include mixins/videoBlock
 block content
     .videos
         each item in videos
+            console.log(33, item)
             +videoBlock({
                 id: item.id,
-                videoFile: item.videoFile,
+                videoFile:item.fileUrl,
                 title: item.title,
                 views: item.views
             })
