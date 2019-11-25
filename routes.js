@@ -25,12 +25,24 @@ const routes = {
     logout: LOGOUT,
     search: SEARCH,
     user: USER,
-    userDetail: USER_DETAIL,
+    userDetail: id => {
+        if (id) {
+            return `/users/${id}`
+        } else {
+            return USER_DETAIL
+        }
+    },
     editProfile: EDIT_PROFILE,
     changePassword: CHANGE_PASSWORD,
     videos: VIDEOS,
     upload: UPLOAD,
-    videoDetail: VIDEO_DETAIL,
+    videoDetail: id => {
+        if (id) {
+            return `/videos/${id}`
+        } else {
+            return VIDEO_DETAIL
+        }
+    },
     editVideo: EDIT_VIDEO,
     editVideo: EDIT_PROFILE,
     deleteVideo: DELETE_VIDEO,
