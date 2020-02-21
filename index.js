@@ -1,4 +1,5 @@
-const express = require('express')
+import express from 'express'
+import morgan from 'morgan'
 const app = express()
 
 const PORT = 4000
@@ -20,7 +21,7 @@ const betweenHome = (req, res, next) => {
   next()
 }
 
-app.use(betweenHome)
+app.use(morgan('tiny'))
 
 app.get('/', handleHome)
 app.get('/profile', handleProfile)
